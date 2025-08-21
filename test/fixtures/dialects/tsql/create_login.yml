@@ -3,7 +3,7 @@
 # computed by SQLFluff when running the tests. Please run
 # `python test/generate_parse_fixture_yml.py`  to generate them after adding or
 # altering SQL files.
-_hash: a37f693c347dfe13b88ba1f444497a58bebd55e30bcc0d92604bb749d2adc2e4
+_hash: b404b7c655ceebbfe542297ff4905db3a7656831a7ebc123630de1b895c54241
 file:
   batch:
   - statement:
@@ -98,7 +98,7 @@ file:
       - keyword: SID
       - comparison_operator:
           raw_comparison_operator: '='
-      - numeric_literal: '0x241C11948AEEB749B0D22646DB1A19F2'
+      - binary_literal: '0x241C11948AEEB749B0D22646DB1A19F2'
   - statement_terminator: ;
   - statement:
       create_login_statement:

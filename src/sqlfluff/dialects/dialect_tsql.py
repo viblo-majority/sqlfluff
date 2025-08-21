@@ -2594,7 +2594,7 @@ class ColumnConstraintSegment(BaseSegment):
                             Ref("BareFunctionSegment"),
                             Ref("FunctionSegment"),
                             Ref("NextValueSequenceSegment"),
-                            Ref("HexadecimalLiteralSegment"),
+                            Ref("TsqlHexadecimalLiteralSegment"),
                         ),
                     ),
                 ),
@@ -3311,7 +3311,7 @@ class ReplicateFunctionContentsSegment(BaseSegment):
         Bracketed(
             OneOf(
                 Ref("ExpressionSegment"),
-                Ref("HexadecimalLiteralSegment"),
+                Ref("TsqlHexadecimalLiteralSegment"),
             ),
             Ref("CommaSegment"),
             Ref("ExpressionSegment"),
@@ -4730,7 +4730,7 @@ class SetContextInfoSegment(BaseSegment):
         "SET",
         "CONTEXT_INFO",
         OneOf(
-            Ref("HexadecimalLiteralSegment"),
+            Ref("TsqlHexadecimalLiteralSegment"),
             Ref("ParameterNameSegment"),
         ),
     )
@@ -6559,7 +6559,7 @@ class CreateLoginStatementSegment(BaseSegment):
         Sequence(
             "SID",
             Ref("EqualsSegment"),
-            Ref("HexadecimalLiteralSegment"),
+            Ref("TsqlHexadecimalLiteralSegment"),
         ),
         _default_database,
         _default_language,
@@ -6804,7 +6804,7 @@ class CreateUserStatementSegment(ansi.CreateUserStatementSegment):
         Sequence(
             "SID",
             Ref("EqualsSegment"),
-            Ref("HexadecimalLiteralSegment"),
+            Ref("TsqlHexadecimalLiteralSegment"),
         ),
         _allow_encrypted_value,
         Sequence(
